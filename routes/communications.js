@@ -6,19 +6,19 @@ const express =require("express");
 const router=express.Router();
 
 router.get('/sms/:id',(req,res)=>{
-// client.messages.create({
-//      body: `My Bot (message: ${req.params.id})`,
-//      from: process.env.TWILIO_PHONE_NUMBER,
-//      to: process.env.TWILIO_ENDUSER_NUMBER
-//    })
-//   .then(message =>{
-//     res.sendStatus(200);
-//      res.send(message.sid)
-//   }).catch(err=>{
-//     res.sendStatus(400);
-//     res.send(err)
-//   }  
-//     );
+client.messages.create({
+     body: `My Bot (message: ${req.params.id})`,
+     from: process.env.TWILIO_PHONE_NUMBER,
+     to: process.env.TWILIO_ENDUSER_NUMBER
+   })
+  .then(message =>{
+    res.sendStatus(200);
+     res.send(message.sid)
+  }).catch(err=>{
+    res.sendStatus(400);
+    res.send(err)
+  }  
+    );
 
 })
 router.get('/call',(req,res)=>{
